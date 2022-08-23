@@ -4,15 +4,15 @@ pipeline {
   stages {
     
     stage('Checkout') {
-      step {
-      checkout([$class: 'Git',
-                branches: [[name: '*/master']],
-                doGenerateSubmoduleConfigurations: false,
-                extensions: [[$class: 'CloneOption', noTags: true, reference: '', shallow: true]],
-                submoduleCfg: [],
-                userRemoteConfigs: [[url: 'https://github.com/anilalapy/demo-jenkins.git']]
-                ]);
-      }
+      steps {
+                checkout([$class: 'Git',
+                  branches: [[name: '*/master']],
+                  doGenerateSubmoduleConfigurations: false,
+                  extensions: [[$class: 'CloneOption', noTags: true, reference: '', shallow: true]],
+                  submoduleCfg: [],
+                  userRemoteConfigs: [[url: 'https://github.com/anilalapy/demo-jenkins.git']]
+                  ]);
+        }
     }
       
   
