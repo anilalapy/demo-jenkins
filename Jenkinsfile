@@ -4,6 +4,7 @@ pipeline {
   stages {
     
     stage('Checkout') {
+      step {
       checkout([$class: 'Git',
                 branches: [[name: '*/master']],
                 doGenerateSubmoduleConfigurations: false,
@@ -11,7 +12,9 @@ pipeline {
                 submoduleCfg: [],
                 userRemoteConfigs: [[url: 'https://github.com/anilalapy/demo-jenkins.git']]
                 ]);
+      }
     }
+      
   
     stage("Build") {
       steps {
