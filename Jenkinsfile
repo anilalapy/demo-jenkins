@@ -5,7 +5,7 @@ pipeline {
     
     stage('Checkout') {
       checkout([$class: 'GitSCM',
-                branches: [[name: '*/dev']],
+                branches: [[name: '*/master']],
                 doGenerateSubmoduleConfigurations: false,
                 extensions: [[$class: 'CloneOption', noTags: true, reference: '', shallow: true]],
                 submoduleCfg: [],
